@@ -20,4 +20,6 @@ public:
     float toFloat( void ) const;
 };
 
+std::ostream& operator<<(std::ostream& COUT, const Fixed& object);
+
 #endif

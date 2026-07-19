@@ -6,12 +6,12 @@ Fixed::Fixed(){
 }
 
 Fixed::Fixed(int init){
-    _fvalue = init;
+    _fvalue = init * (1 << _bits);
     std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float init){
-    _fvalue = init;
+    _fvalue = roundf(init * (1 << _bits));
     std::cout << "Float constructor called" << std::endl;
 }
 
@@ -33,6 +33,10 @@ Fixed::~Fixed(){
 }
 
 float Fixed::toFloat() const{
-    
+    return ((float)_fvalue / (1 << _bits));
+}
+
+int Fixed::toInt() const{
+    return (_fvalue >> _bits);
 }
 
