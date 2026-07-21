@@ -1,4 +1,4 @@
-NAME = Fixed
+NAME = Fixed02
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
